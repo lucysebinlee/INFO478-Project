@@ -1,5 +1,5 @@
 # INFO 478 Project Proposal
-Names: Lucy Lee, Rita Wu, Brian Luu, Tabitha Anderson
+Names: Lucy Lee, Rita Wu, Brian Luu, Tabitha Anderson <br/>
 Data: https://www.kaggle.com/uciml/student-alcohol-consumption
 
 ## Project Description
