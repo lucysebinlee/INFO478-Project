@@ -1,1 +1,1 @@
-# INFO478-Project
+# INFO 478 Project Proposal
