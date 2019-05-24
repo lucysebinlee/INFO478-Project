@@ -17,10 +17,10 @@ d3 = merge(d1, d2, by = c("school", "sex", "age", "address", "famsize", "Pstatus
 print(nrow(d3)) # 382 students
 
 # Define server logic required to draw a histogram
-shinyServer(function(input, output) {
+  server <- function(input, output) {
   
   output$distPlot <- renderPlot({
     
   })
   
-})
+}
