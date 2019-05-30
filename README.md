@@ -21,14 +21,12 @@ This is a survey based on the interviews of students in four-year colleges, exam
 > The data we will working on is Student Alcohol consumption that we found from Kaggle. The data were obtained in a survey of students math and portuguese language courses in secondary school. It contains a lot of interesting social, gender and study information about students. The data from the students belong to two schools of Portugal - Gabriel Pereira and Mousinho da Silveira.
 
 4. Who is your target audience?  Depending on the domain of your data, there may be a variety of audiences interested in using the dataset. You should hone in on one of these audiences.
-> The target audience would be university students in Portugal. This will help them understand the possible effects that alcohol consumption can have on the many aspects of their lives. 
+> The target audience would be secondary school students. This will help them understand the possible effects that alcohol consumption can have on the many aspects of their lives. 
 >
 > Another target audience that could be used for this project is educators. This analysis could possibly be used to help guide these educators on how to help their students in the best way possible. We are planning on using University students, but would like some feedback if this will be a better direction to go in.
 
 5. What should your audience learn from your resource? Please consider specific questions that your project can answer using the data you have identified (that are related to the overarching purpose)
-> For University students, this project will help them understand the possible effects that alcohol consumption can have on the many aspects of their lives. 
->
-> For educators, this analysis could possibly be used to help guide these educators on how to help their students in the best way possible. 
+> For students, this project will help them understand the possible effects that alcohol consumption can have on the many aspects of their lives. For educators, this analysis could possibly be used to help guide these educators on how to help their students in the best way possible. 
 
 ## Technical Description
 1. What will be the format of your final product (Shiny app, HTML page, compiled .Rmd file, etc)?
