@@ -7,14 +7,15 @@ library(ggpubr)
 library(reshape2)
 library(dplyr)
 library(plotly)
-library("shinydashboard")
+library(shinydashboard)
 library(sunburstR)
 
 sidebar <- dashboardSidebar(
   sidebarMenu(
     menuItem(
       "Introduction",
-      tabName = "Introduction", icon = icon("dashboard")
+      tabName = "Introduction", 
+      icon = icon("dashboard")
     ),
     menuItem("Grades vs. Alcohol Consumption",
       tabName = "Grades_alcohol_Consumption",
@@ -22,7 +23,8 @@ sidebar <- dashboardSidebar(
     ),
     menuItem(
       "Background",
-      tabName = "Rita", icon = icon("dollar-sign")
+      tabName = "Rita", 
+      icon = icon("dollar-sign")
     ),
     menuItem("Brian",
       icon = icon("chart-line"),
@@ -46,6 +48,36 @@ sidebar <- dashboardSidebar(
 
 body <- dashboardBody(
   tabItems(
+    tabItem(
+      tabName = "Introduction",
+      h3("Student’s Alcohol Consumption"),
+      p("By. Tabitha Anderson, Katie Clark, Lucy Lee, Brian Luu, Rita Wu"),
+      br(),
+      h4("Project Description"),
+      br(),
+      h5("Purpose"),
+      p("In order to teach effectively, it is important for educators to understand the factors that influence 
+        student performance. In fact, in order to learn effectively, it is also important for students to 
+        understand the factors that influence their performance. Thus, this research project seeks to provide 
+        that information by visualizing data from a student performance dataset. By doing so, this web application 
+        will explore the effects of alcohol consumption over student’s academic performance."),
+      br(),
+      h5("Target Audience"),
+      p("Our target audience would be secondary school students, which this project will help them understand the possible 
+        effects that alcohol consumption can have on the many aspects of their lives. Moreover, another target audience 
+        would be educators. This analysis could be utilized to help guide these educators on how to help their students 
+        in the best way possible."),
+      br(),
+      h5("Dataset"),
+      p("The data we will be using is “Student Alcohol Consumption,” which was collected by UCI Machine Learning from the 
+        University of California, Irvine. We accessed the information on
+        Kaggle (Link: https://www.kaggle.com/uciml/student-alcohol-consumption), 
+        which is an educational dataset collected by a survey of students in math a
+        nd portuguese language courses in a secondary school to predict students’ 
+        final grade. The dataset consists of a sample of 382 students and their 
+        associated attributes that characterize each student, including gender, age, 
+        family size, parent’s job, school absences, and more.")
+    ),
     tabItem(
       tabName = "Rita",
       h3("The background influences"),
