@@ -29,8 +29,8 @@ sidebar <- dashboardSidebar(
       tabName = "Brian"
     ),
     menuItem("Katie",
-      icon = icon("Katie"),
-      tabName = "Brian"
+      icon = icon("chart-line"),
+      tabName = "Katie"
     ),
     menuItem("Tabitha",
       icon = icon("chart-line"),
@@ -116,6 +116,16 @@ body <- dashboardBody(
           )
         ),
         plotOutput("jobPlot")
+      ),
+      tabItem(tabName = "Katie",
+            h2("How do the different variables correlate to alcohol Consumption?"),
+            selectInput('alc', 'Alchohol Consumption', list('Workday Alchohol Consumption' = 'Dalc', 
+                                                            'Weekend Alcohol Consumption' = 'Walc')),
+            selectInput('var', 'Variable', list('Family Relationship' = 'famrel', '# of Absences' = 'absences',
+                                                '# of Class Failures' = 'failures', 'Going out with Friends' = 'goout',
+                                                'First Period Grades' = 'G1', 'Second Period Grades' = 'G2',
+                                                'Third Period Grades' = 'G3')),
+            plotlyOutput('interactivePlot')
       )
     )
   )
