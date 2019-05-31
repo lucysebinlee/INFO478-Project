@@ -101,8 +101,8 @@ body <- dashboardBody(
         that there is definitely an associative relationship between grades and daily alcohol consumption. 
         In conclusion, more daily alcohol consumption for students lead to lower grades."),
       br(),
-      p("In support of these claims, an article _Is Alcohol Consumption Associated with Poor Academic 
-        Achievement in University Students?_ by Walid El Ansari et al., was reviewed. They assessed the
+      p("In support of these claims, an article 'Is Alcohol Consumption Associated with Poor Academic 
+        Achievement in University Students?' by Walid El Ansari et al., was reviewed. They assessed the
         associations between educational achievement and alcohol consumption by employing five different
         alcohol consumption measures (length of time and the amount of alcohol consumed for 
         the most recent occasion, frequency of alcohol consumption, heavy drinking, and problem drinking) and
