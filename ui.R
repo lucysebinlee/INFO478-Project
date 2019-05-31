@@ -79,6 +79,32 @@ body <- dashboardBody(
         family size, parent’s job, school absences, and more.")
     ),
     tabItem(
+      tabName = "Grades_alcohol_Consumption",
+      h3("Grades vs. Alcohol Consumption"),
+      br(),
+      p("First, this tab compares the data between the rate of alcohol consumptions and grades."),
+      img(src = "grades1.png", height = 400),
+      br(),
+      p(),
+      img(src = "grades2.png", height = 400),
+      br(),
+      p(),
+      img(src = "grades3.png", height = 400),
+      br(),
+      p("From the data represented in these charts, it can be shown that higher grades are associated 
+        with lower daily alcohol consumption. For the First Period Grades vs. Alcohol Consumption, the grade 
+        is the highest at 1 day and lowest at 5 days, with the grade decreasing everyday after the first. 
+        This trend continues for the second period grades and the final period grades.
+        
+        Some reasons for this is because students may be spending more time drinking than focusing on 
+        their school work. Another possible reason may be that  students who spend more time drinking 
+        might simply be less serious about their academic careers. However, these reasons are simply 
+        suggestive and by no means are conclusive reasons for why grades are lower for those with less 
+        daily alcohol consumption. One that that is certain is that there is say from our charts that is 
+        that there is definitely an associative relationship between grades and daily alcohol consumption. 
+        In conclusion, more daily alcohol consumption for students lead to lower grades.")
+    ),
+    tabItem(
       tabName = "Rita",
       h3("The background influences"),
       p("In terms of how much college students drink, we think background factors are 
