@@ -82,27 +82,42 @@ body <- dashboardBody(
       tabName = "Grades_alcohol_Consumption",
       h3("Grades vs. Alcohol Consumption"),
       br(),
-      p("First, this tab compares the data between the rate of alcohol consumptions and grades."),
-      img(src = "grades1.png", height = 400),
-      br(),
-      p(),
-      img(src = "grades2.png", height = 400),
-      br(),
-      p(),
-      img(src = "grades3.png", height = 400),
-      br(),
-      p("From the data represented in these charts, it can be shown that higher grades are associated 
+      p("First, this tab compares the data between the rate of alcohol consumptions and grades.
+        From the data represented in these charts, it can be shown that higher grades are associated 
         with lower daily alcohol consumption. For the First Period Grades vs. Alcohol Consumption, the grade 
         is the highest at 1 day and lowest at 5 days, with the grade decreasing everyday after the first. 
-        This trend continues for the second period grades and the final period grades.
-        
-        Some reasons for this is because students may be spending more time drinking than focusing on 
+        This trend continues for the second-period grades and the final period grades."),
+      img(src = "grades1.png", height = 400),
+      br(),
+      img(src = "grades2.png", height = 400),
+      br(),
+      img(src = "grades3.png", height = 400),
+      br(), br(),
+      p("Some reasons for this result is because students may be spending more time drinking than focusing on 
         their school work. Another possible reason may be that  students who spend more time drinking 
         might simply be less serious about their academic careers. However, these reasons are simply 
         suggestive and by no means are conclusive reasons for why grades are lower for those with less 
-        daily alcohol consumption. One that that is certain is that there is say from our charts that is 
+        daily alcohol consumption. One that is certain is that there is say from our charts that is 
         that there is definitely an associative relationship between grades and daily alcohol consumption. 
-        In conclusion, more daily alcohol consumption for students lead to lower grades.")
+        In conclusion, more daily alcohol consumption for students lead to lower grades."),
+      br(),
+      p("In support of these claims, an article _Is Alcohol Consumption Associated with Poor Academic 
+        Achievement in University Students?_ by Walid El Ansari et al., was reviewed. They assessed the
+        associations between educational achievement and alcohol consumption by employing five different
+        alcohol consumption measures (length of time and the amount of alcohol consumed for 
+        the most recent occasion, frequency of alcohol consumption, heavy drinking, and problem drinking) and
+        three educational indicators (student's importance of achieving good grades, appraisal of their academic
+        performance compared to other students, and student's actual mark). As a result, they found that alcohol 
+        consumption showed *negative* associations with motivation to achieve academic performance. Moreover, in
+        comparison with other peers, those who drink more alcohol was negatively associated with heavy drinking."),
+      br(),
+      p("Thus, our findings can convey that alcohol consumption and academic performance for students are highly relevant.
+        Educators should aim at prevention of alcohol abuse, while paying more attention to their alcohol policies.
+        Likewise, students should aim to reduce the rate of their alcohol consumption if they are hoping to achieve
+        higher academic performance for their education."),
+      br(),
+      p("Source: El Ansari, Walid et al. “Is alcohol consumption associated with poor academic achievement 
+        in university students?.” International journal of preventive medicine vol. 4,10 (2013): 1175-88.")
     ),
     tabItem(
       tabName = "Rita",
