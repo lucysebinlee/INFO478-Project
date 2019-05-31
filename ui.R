@@ -70,8 +70,8 @@ body <- dashboardBody(
       br(),
       h5("Dataset"),
       p("The data we will be using is “Student Alcohol Consumption,” which was collected by UCI Machine Learning from the 
-        University of California, Irvine. We accessed the information on 
-        [Kaggle](https://www.kaggle.com/uciml/student-alcohol-consumption), 
+        University of California, Irvine. We accessed the information on
+        Kaggle (Link: https://www.kaggle.com/uciml/student-alcohol-consumption), 
         which is an educational dataset collected by a survey of students in math a
         nd portuguese language courses in a secondary school to predict students’ 
         final grade. The dataset consists of a sample of 382 students and their 
