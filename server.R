@@ -28,20 +28,16 @@ print(nrow(d3)) # 382 students
     
   })
   
-  interactive_data <- reactive({
+  interactive_alc_data <- reactive({
     dmat %>%
     select_("Dalc", input$var, 'Walc') %>%
       group_by_(input$var) %>%
       summarize_all(funs(mean))
   })
-  
-  output$test <- renderDataTable(interactive_data())
-  
-  output$interactivePlot <- renderPlotly({
-    p <- ggplot(interactive_data(), aes_string(x = input$var, y = input$alc)) + 
-      geom_bar(stat = 'identity')
-    
-    ggplotly(p)
+
+  output$interactiveAlcPlot <- renderPlotly({
+    plot_ly(interactive_alc_data(), x = ~get(input$var), y = ~get(input$alc), type= 'bar') %>%
+      layout(xaxis = list(title = input$var), yaxis = list(title = input$alc))
   })
   
 }

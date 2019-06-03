@@ -157,7 +157,8 @@ body <- dashboardBody(
                                                 '# of Class Failures' = 'failures', 'Going out with Friends' = 'goout',
                                                 'First Period Grades' = 'G1', 'Second Period Grades' = 'G2',
                                                 'Third Period Grades' = 'G3')),
-            plotlyOutput('interactivePlot')
+            plotlyOutput('interactiveAlcPlot')
+            
       )
     )
   )
