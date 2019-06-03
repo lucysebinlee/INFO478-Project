@@ -1,4 +1,5 @@
 # server.R
+source("Rita_analysis.R")
 
 # Load Packages
 library(shiny)
@@ -43,5 +44,61 @@ print(nrow(d3)) # 382 students
     
     ggplotly(p)
   })
+  
+  output$pie <- renderPlotly({
+    pie <- plot_ly() %>%
+      add_pie(data = address.data, labels = ~address, values = ~alc,
+              name = "address", domain = list(x = c(0, 0.4), y = c(0.4, 1))) %>%
+      add_pie(data = famsize.data, labels = ~family.size, values = ~alc,
+              name = "family.size", domain = list(x = c(0.6, 1), y = c(0.4, 1))) %>%
+      layout(title = "Address & Family Size", showlegend = F,
+             xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+             yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+  })
+  
+  output$bar <- renderPlotly({
+    guardian.bar <- plot_ly(guardian.data, x = ~guardian, y = ~alc, type = 'bar', 
+                            
+                            marker = list(color = 'rgb(158,202,225)',
+                                          line = list(color = 'rgb(8,48,107)', width = 1.5))) %>%
+      layout(title = "Guardian",
+             xaxis = list(title = "guardian type"),
+             yaxis = list(title = "alcohol consumption"))
+    
+    relation.bar <- plot_ly(famrel.data, x = ~family.relationship, y = ~alc, type = 'bar', 
+                            
+                            marker = list(color = 'rgba(219, 64, 82, 0.7)',
+                                          line = list(color = 'orange', width = 1.5))) %>%
+      layout(title = " Guardian & Family Relationship",
+             xaxis = list(title = "relationship level"),
+             yaxis = list(title = "alcohol consumption"))
+    
+    bar <- subplot(guardian.bar, relation.bar)
+    
+  })
+  
+  output$educationPlot <- renderPlot({
+    education.data <- parent.edu %>% filter(variable == input$education)
+    
+    ggplot(education.data, aes(value, alc, label = alc)) +
+      geom_segment(aes(x=value, xend=value, y=0, yend=alc)) +
+      geom_point(size = 11, color = "orange" ) +
+      geom_text(color = "white", size = 3) + 
+      labs(title="Parent's Education Vs Student's Alcohol Consumption", x= "Education Level") 
+    
+  })
+  
+  output$jobPlot <- renderPlot({
+    
+    job.data <- parent.job %>% filter(variable == input$occupation)
+    
+    ggplot(job.data, aes(value, alc, label = alc)) +
+      geom_segment(aes(x= value, xend = value, y=0, yend = alc)) +
+      geom_point(size = 11, color = "springgreen3" ) +
+      geom_text(color = "white", size = 3) + 
+      labs(title="Parent's Occupation Vs Student's Alcohol Consumption")
+    
+  })
+  
   
 }

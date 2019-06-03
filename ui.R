@@ -24,7 +24,7 @@ sidebar <- dashboardSidebar(
     menuItem(
       "Background",
       tabName = "Rita", 
-      icon = icon("dollar-sign")
+      icon = icon("address-book")
     ),
     menuItem("Brian",
       icon = icon("chart-line"),
@@ -119,77 +119,6 @@ body <- dashboardBody(
       p("Source: El Ansari, Walid et al. “Is alcohol consumption associated with poor academic achievement 
         in university students?.” International journal of preventive medicine vol. 4,10 (2013): 1175-88.")
     ),
-    tabItem(
-      tabName = "Rita",
-      h3("The background influences"),
-      p("In terms of how much college students drink, we think background factors are 
-          also important. In this area, we will analyze the education level of students' 
-          parents, job occupation, students' family environment and growth atmosphere. 
-          The data were analyzed to find out whether these background factors were related 
-          to students' alcohol consumption. And try to find out what factors will influence this behavior the most."),
-      br(),
-      h3("The variables of background infomation"),
-      p("Under this part, there are two pie charts and two bar plots which are directly show the 
-          variable of the student's location, family size, guardian type and family relationships."),
-      br(),
-      plotlyOutput("pie"),
-      h4("Infomation From Address"),
-      tags$ul(
-        tags$li("There are two types of student's home address rural and urban. 
-                  From the pie chart we can tell that students who live in urban area drink more than twice as much as 
-                  those who live in rural areas."),
-        tags$li("The reason may be that living in the urban area is more convenient and 
-                      has more opportunities to attend occasions 
-                  that you can drink alcohol, such as parties. Secondly, students who may 
-                  live in rural areas have more recreational activities than the urban areas."),
-        tags$li("There may be more reasons for this result. In conclusion, the residence of 
-                a family has a great influence on the amount of alcohol students drink.")
-      ),
-        br(),
-        h4("Infomation From Family Size"),
-        tags$ul(
-          tags$li("For the family size type is binary whether less or equal to 3 or greater than 3. 
-                 The second pie chart shows that tudents with more than three family members drank more than twice 
-                  as much as those with fewer than three."),
-          tags$li("The reason for this may be that more family members increase their exposure to alcohol. 
-                  Because family members are older, more diverse in their habits, and even more diverse in 
-                  their occupations, they indirectly increase their chances of drinking. Second, having a 
-                  larger family may increase the chances of drinking. Also, with a large family, the amount 
-                  of alcohol stored may be greater, and people may drink more without realizing it.")
-        ),
-      br(),
-        plotlyOutput("bar"),
-      h4("Infomation From Guardians and Family Relationship"),
-      
-      tags$ul(
-        tags$li("The student's guardian types in nominaly are mother, father or other. 
-                And quality of family relationships from 1 which is very bad to 5 which means excellent.
-                From the bar chart, we can tell that students who lived with their mothers drank far more 
-                than children whose fathers or others acted as guardians."),
-        tags$li("We can infer from the results that it is possible that mothers are more relaxed about 
-               their children's alcohol intake and fathers are more strict about drinking alcohol. 
-                For the family relationship fact, the students with a better family relationship have higher
-                alcohol consumption than students with lower quality family relationship.")
-        ),
-      
-        radioButtons("education",
-          label = "Parent's Education Level",
-          choices = c(
-            "Mother's education" = "Medu",
-            "Father's education" = "Fedu"
-          )
-        ),
-
-        plotOutput("educationPlot"),
-        radioButtons("occupation",
-          label = "Parent's Jobs type",
-          choices = c(
-            "Mother's job" = "Mjob",
-            "Father's job" = "Fjob"
-          )
-        ),
-        plotOutput("jobPlot")
-      ),
       tabItem(tabName = "Katie",
             h2("How do the different variables correlate to alcohol Consumption?"),
             selectInput('alc', 'Alchohol Consumption', list('Workday Alchohol Consumption' = 'Dalc', 
@@ -198,10 +127,120 @@ body <- dashboardBody(
                                                 '# of Class Failures' = 'failures', 'Going out with Friends' = 'goout',
                                                 'First Period Grades' = 'G1', 'Second Period Grades' = 'G2',
                                                 'Third Period Grades' = 'G3')),
-            plotlyOutput('interactivePlot')
+            plotlyOutput('interactivePlot')),
+            
+            tabItem(
+              tabName = "Rita",
+              h3("The background influences"),
+              p("In terms of how much college students drink, we think background factors are 
+                also important. In this area, we will analyze the education level of students' 
+                parents, job occupation, students' family environment and growth atmosphere. 
+                The data were analyzed to find out whether these background factors were related 
+                to students' alcohol consumption. And try to find out what factors will influence this behavior the most."),
+              br(),
+              h3("The variables of background infomation"),
+              p("Under this part, there are two pie charts and two bar plots which are directly show the 
+                variable of the student's home location, family size, guardian type and family relationships."),
+              br(),
+              plotlyOutput("pie"),
+              h4("Infomation From Address"),
+              tags$ul(
+                tags$li("There are two types of student's home address rural and urban. 
+                        From the pie chart we can tell that students who live in rural area drink a little more than 
+                        those who live in urban areas."),
+                tags$li("We might think that living in the urban area is more convenient and 
+                        has more opportunities to attend occasions 
+                        that you can drink alcohol, such as parties. But that wasn't the case. The result 
+                        was greater drinking in rural areas. The reason for this may be that there are not 
+                        as many recreational activities in rural areas as in cities, and alcohol is easily available"),
+                tags$li("There may be more reasons for this result. In conclusion, the residence of 
+                        a family has a slight influence on the amount of alcohol students drink.")
+                ),
+              br(),
+              h4("Infomation From Family Size"),
+              tags$ul(
+                tags$li("For the family size type is binary whether less or equal to 3 or greater than 3. 
+                        The second pie chart shows that students with more than three family members drink less than
+                        those with fewer than three."),
+                tags$li(" Students with larger families may have greater exposure to alcohol. For students with small 
+                        families, a slightly higher alcohol intake may be due to fewer family members opposing alcohol consumption, or 
+                        less strict regulation and more time with friends.")
+                ),
+              br(),
+              plotlyOutput("bar"),
+              h4("Infomation From Guardians and Family Relationship"),
+              tags$ul(
+                tags$li("The student's guardian types in nominaly are mother, father or other. 
+                        And quality of family relationships from 1 which is very bad to 5 which means excellent.
+                        From the bar chart, we can tell that students who lived with their mothers drank less  
+                        than children whose fathers or others acted as guardians."),
+                tags$li("We can infer from the results that it is possible that fathers or others acted as guardians
+                        are more relaxed about 
+                        their children's alcohol intake and mothers are more strict about drinking alcohol. 
+                        For the family relationship fact, the students with a better family relationship have lower
+                        alcohol consumption than students with lower quality family relationship.")
+                ),
+              fixedRow(
+                column(
+                  3,
+                  radioButtons("education",
+                               label = "Education Level",
+                               choices = c(
+                                 "Mother's education" = "Medu",
+                                 "Father's education" = "Fedu"
+                               )
+                  )
+                ),
+                
+                column(
+                  6,
+                  radioButtons("occupation",
+                               label = "Jobs type",
+                               choices = c(
+                                 "Mother's job" = "Mjob",
+                                 "Father's job" = "Fjob"
+                               )
+                  )
+                )
+              ),
+              fixedRow(
+                column(
+                  6,
+                  plotOutput("educationPlot")
+                ),
+                column(
+                  6,
+                  plotOutput("jobPlot")
+                )
+              ),
+              h4("Infomation From Students' Parents"),
+              tags$ul(
+                tags$li("Under this part we have the data about the parent's education and occupation.
+                        For education, the 0 is none, 1 is primary education (4th grade), 2 is 5th to 9th grade, 
+                        3 is secondary education, or 4 is higher education. For occupation, there are five 
+                        big catagory 'teacher', 'health' care related, civil 'services' (e.g. administrative or police), 
+                        'at_home' or 'other')."),
+                tags$li("Children of uneducated mothers drank the most alcohol, followed by those of mothers with primary school education.
+                        The effect of fathers' education on alcohol consumption was different.
+                        The children of other educated fathers drank about the same amount of alcohol, 
+                        except that the children of uneducated fathers drank the least."),
+                tags$li("Students whose mothers were in the medical profession drank the least, and those whose fathers were teachers drank the least. 
+                        The parents of the heaviest alcohol consumption's students were both in the services sector."),
+                tags$li("As can be seen from the picture, the education level of the mother has a certain influence on the amount of alcohol students drink. 
+                        The effect of fathers' education may be less pronounced. The influence of parents' occupation on students' alcohol consumption is obvious, 
+                        among which students whose parents are engaged in medical treatment and education drink less alcohol. And students whose parents were serving 
+                        drank the most, probably because they were busier."),
+                h4("Conclusion & Analyze"),
+                p("According to the latest statistics from the national institute on alcohol abuse and alcoholism (NIAAA), each year. In addition, alcohol causes 97,000 sexual assaults or date rapes each year, with an estimated 696,000 assaults.According to the NIH, The continuing influence of parents 
+                  is an often overlooked factor. Studies show that students often abstain from alcohol because 
+                  their parents discuss alcohol use and its negative consequences for them. And in these critical early stages, there are many things parents can do to 
+                  stay engaged. "),
+                h4("Outside Source"),
+                a("https://www.niaaa.nih.gov/publications/brochures-and-fact-sheets/time-for-parents-discuss-risks-college-drinking" )
+              )
+            )
+        )
       )
-    )
-  )
 
 ## ui code starts here
 ui <- fluidPage(
