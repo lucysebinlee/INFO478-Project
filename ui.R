@@ -12,31 +12,25 @@ library(sunburstR)
 
 sidebar <- dashboardSidebar(
   sidebarMenu(
-    menuItem(
-      "Introduction",
+    menuItem("Introduction",
       tabName = "Introduction", 
       icon = icon("dashboard")
     ),
-    menuItem("Grades vs. Alcohol Consumption",
-      tabName = "Grades_alcohol_Consumption",
-      icon = icon("globe-asia")
-    ),
-    menuItem(
-      "Background",
+    menuItem("Background",
       tabName = "Rita", 
       icon = icon("address-book")
     ),
-    menuItem("Brian",
-      icon = icon("chart-line"),
-      tabName = "Brian"
+    menuItem("Grades",
+      tabName = "Grades_alcohol_Consumption",
+      icon = icon("globe-asia")
     ),
     menuItem("Alcohol Consumption",
-      icon = icon("chart-line"),
-      tabName = "Katie"
+      tabName = "Katie",
+      icon = icon("chart-line")
     ),
     menuItem("Sex and Age",
-      icon = icon("venus-mars"),
-      tabName = "Tabitha"
+      tabName = "Tabitha",
+      icon = icon("venus-mars")
     ),
     menuItem("Original Codes",
       icon = icon("file-code-o"),
@@ -44,7 +38,6 @@ sidebar <- dashboardSidebar(
     )
   )
 )
-
 
 body <- dashboardBody(
   tabItems(
@@ -80,7 +73,7 @@ body <- dashboardBody(
     ),
     tabItem(
       tabName = "Grades_alcohol_Consumption",
-      h3("Grades vs. Alcohol Consumption"),
+      h2("How does Alcohol Consumption Affect Grades?"),
       br(),
       p("First, this tab compares the data between the rate of alcohol consumptions and grades.
         From the data represented in these charts, it can be shown that higher grades are associated 
@@ -132,7 +125,6 @@ body <- dashboardBody(
                                                 "Amount of Free Time " = 'freetime',
                                                 'First Period Grades' = 'G1', 'Second Period Grades' = 'G2',
                                                 'Third Period Grades' = 'G3')),
-
             plotlyOutput('interactiveAlcPlot'),
             br(),
             p("As seen above, there is some correlation between alcohol consumption and outside variables. 
@@ -147,7 +139,7 @@ body <- dashboardBody(
               students with an alcohol problem.")
       ),
       tabItem(tabName = "Tabitha",
-             h2("How does does Gender and Age Effect Alcohol Consumption?"),
+             h2("How does Gender and Age Effect Alcohol Consumption?"),
              br(),
              p('In this section, we will be evaluating how someones age changes how much alcohol they will consume
                daily. The scale that we are using is the Dalc which acounts for the Daily Alcohol Consumption throughout
@@ -207,9 +199,7 @@ body <- dashboardBody(
                their female counterparts. When we begin to look at the averages without the different sexes, we start to
                see another trend. This one sees the drinking levels increase pretty drastically after turning 21. This
                would show that once people have more access to alcohol, they are more likely to drink more excessively.')
-
           ),
-            
             tabItem(
               tabName = "Rita",
               h3("The background influences"),
@@ -272,7 +262,6 @@ body <- dashboardBody(
                                )
                   )
                 ),
-                
                 column(
                   6,
                   radioButtons("occupation",
@@ -321,7 +310,6 @@ body <- dashboardBody(
               )
             )
         )
-
       )
 
 ## ui code starts here
