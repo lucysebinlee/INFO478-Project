@@ -127,7 +127,9 @@ body <- dashboardBody(
             selectInput('alc', 'Alchohol Consumption', list('Workday Alchohol Consumption' = 'Dalc', 
                                                             'Weekend Alcohol Consumption' = 'Walc')),
             selectInput('var', 'Variable', list('Family Relationship' = 'famrel', '# of Absences' = 'absences',
-                                                '# of Class Failures' = 'failures', 'Going out with Friends' = 'goout',
+                                                '# of Class Failures' = 'failures', 'Going out with Friends' = 'goout', 
+                                                'Travel Time to School' = 'traveltime', 
+                                                "Amount of Free Time " = 'freetime',
                                                 'First Period Grades' = 'G1', 'Second Period Grades' = 'G2',
                                                 'Third Period Grades' = 'G3')),
 
