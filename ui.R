@@ -199,6 +199,25 @@ body <- dashboardBody(
                                                 'First Period Grades' = 'G1', 'Second Period Grades' = 'G2',
                                                 'Third Period Grades' = 'G3')),
             plotlyOutput('interactivePlot')
+      ),
+      tabItem(tabName = "Tabitha",
+             h2("How does does Gender and Age Effect Alcohol Consumption?"),
+             br(),
+             p("Next we plan to assess how the effects of alcohol consumption with the "),
+               sliderInput("age",
+                           "Pick An Age:",
+                           min = 15,
+                           max = 22,
+                           value = 18),
+              plotlyOutput('agePlot'),
+             radioButtons("sex",
+                          "Choose by Sex:",
+                          c("Female" = 'F', 'Male' = 'M')),
+             plotlyOutput('newPlot'),
+             radioButtons("sex2",
+                          "Choose by Sex:",
+                          choices = c("Sexes", "All")),
+             plotlyOutput('sexPlot')
       )
     )
   )
@@ -208,6 +227,7 @@ ui <- fluidPage(
   includeCSS("custom.css"),
   dashboardPage(
     dashboardHeader(title = "Student Alcohol Consumption"),
+    titlewidth = 450,
     sidebar,
     body
   )
