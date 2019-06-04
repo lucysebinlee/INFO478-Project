@@ -247,7 +247,7 @@ body <- dashboardBody(
 ui <- fluidPage(
   includeCSS("custom.css"),
   dashboardPage(
-    dashboardHeader(title = "Student Alcohol Consumption"),
+    dashboardHeader(title = "Student Alcohol Consumption", titleWidth = 450),
     sidebar,
     body
   )
