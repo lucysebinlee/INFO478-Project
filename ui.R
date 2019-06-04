@@ -34,8 +34,8 @@ sidebar <- dashboardSidebar(
       icon = icon("chart-line"),
       tabName = "Katie"
     ),
-    menuItem("Tabitha",
-      icon = icon("chart-line"),
+    menuItem("Sex and Age",
+      icon = icon("venus-mars"),
       tabName = "Tabitha"
     ),
     menuItem("Original Codes",
@@ -133,21 +133,64 @@ body <- dashboardBody(
       tabItem(tabName = "Tabitha",
              h2("How does does Gender and Age Effect Alcohol Consumption?"),
              br(),
-             p("Next we plan to assess how the effects of alcohol consumption with the "),
+             p('In this section, we will be evaluating how someones age changes how much alcohol they will consume
+               daily. The scale that we are using is the Dalc which acounts for the Daily Alcohol Consumption throughout
+               the week. A 1 would be considered very low alcohol consumption, while a 5 would indicate very high 
+               alcohol consumption. We will see how these scores are effected with the variations in someones age or sex.'),
+             br(),
+             h3('How Age Effects the Daily Alcohol Consumption of Students'),
+             br(),
+             p('With this first visual, we will show the distribution of alcohol consumption for each age. Move the slider
+               to be able to evaluate which age will have the highest amount of people with either low or high Daily
+               Alcohol Consumption.'),
+             br(),
                sliderInput("age",
                            "Pick An Age:",
                            min = 15,
-                           max = 22,
+                           max = 20,
                            value = 18),
               plotlyOutput('agePlot'),
+             h4('Results for Age Distribution Graph'),
+             br(),
+             p("When checking for the different ages, we can start to see a shift in the alcohol consumption rates. When looking at
+               the lowest age, we find that there are not a lot of kids drinking excessively. With each age increase, we can slowly
+               start to see this begin to change. More and more students begin to fall under the 3+ categories, and there is less people
+               drinking at the lowest amount. Something to keep in mind is that these data ranges have different amounts and the highest
+               ages have less people responding. We believe that these ages have enough response that this trend would continue with more
+               data."),
+             br(),
+             h3('How Sex Effects the Daily Alcohol Consumption of Students'),
+             br(),
+             p('Instead of age, we will now try to see if there are any fundamental differences between how woman and men consume alcohol.'),
+             br(),
              radioButtons("sex",
                           "Choose by Sex:",
                           c("Female" = 'F', 'Male' = 'M')),
              plotlyOutput('newPlot'),
+             br(),
+             h4('Results for Sex Distrbution Graph'),
+             br(),
+             p('When we switch between females and males, there seems to be quite a shift between the different sexes. With males, we see a 
+               higher amount of people in the 3, 4, and 5 categories, and less in the 1 and 2 than their female counterparts. This would
+               support the idea that men tend to consume more than females.'),
+             br(),
+             h3('Average Daily Alcohol Consumption Levels'),
+             br(),
+             p('For this next visual, we are trying to see the average levels for each age by sex. We are also able to ignore the changes
+               in sex and look at the averages for the sexes combined. Since there is not an equal amount of data for each category, this 
+               will help us get a different view than the two previous distribution charts.'),
+             br(),
              radioButtons("sex2",
                           "Choose by Sex:",
                           choices = c("Sexes", "All")),
-             plotlyOutput('sexPlot')
+             plotlyOutput('sexPlot'),
+             h4('Results For the Daily Alcohol Consumption Averages'),
+             br(),
+             p('Something that we see with this graph is that the averages for male exceed females for every age
+               except 19 years old. This would support the previous idea that men tend to drink more excessively than
+               their female counterparts. When we begin to look at the averages without the different sexes, we start to
+               see another trend. This one sees the drinking levels increase pretty drastically after turning 21. This
+               would show that once people have more access to alcohol, they are more likely to drink more excessively.')
 
           ),
             

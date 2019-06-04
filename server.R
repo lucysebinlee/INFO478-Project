@@ -25,11 +25,11 @@ print(nrow(d3)) # 382 students
   })
   
   output$agePlot <- renderPlotly({
-    
+    needed_data <- needed_data %>% filter(age != 22 | age != 21)
     new_data <- needed_data %>% filter(age == input$age) 
     
     # draw the histogram with the specified number of bins
-    plot_ly(new_data, x = ~Dalc, type = 'histogram', marker = list(color = 'rgba(219, 64, 82, 0.7)', line = list(color = "orange", width = 1.5))) %>%
+    plot_ly(new_data, x = ~Dalc, type = 'histogram', hoverinfo = 'none', marker = list(color = 'rgba(219, 64, 82, 0.7)', line = list(color = "orange", width = 1.5))) %>%
       layout(yaxis = list(title = "Count"),
              xaxis = list(title = 'Dalc'), barmode = 'group',
              title = "Total Amount for Each Dalc Level")
@@ -39,7 +39,7 @@ print(nrow(d3)) # 382 students
   output$newPlot <- renderPlotly({
     
     gender_data <- needed_data %>% filter(sex == input$sex)
-    plot_ly(gender_data, x = ~Dalc, type = 'histogram', marker = list(color = 'rgba(219, 64, 82, 0.7)', line = list(color = "orange", width = 1.5))) %>%
+    plot_ly(gender_data, x = ~Dalc, type = 'histogram', hoverinfo = 'none', marker = list(color = 'rgba(219, 64, 82, 0.7)', line = list(color = "orange", width = 1.5))) %>%
       layout(yaxis = list(title = "Count"),
              xaxis = list(title = 'Dalc'), barmode = 'group',
              title = "Total Amount for Each Dalc Level")
@@ -49,7 +49,7 @@ print(nrow(d3)) # 382 students
   output$sexPlot <- renderPlotly({
     
     if (input$sex2 == "All") {
-      plot_ly(total_average_dalc, x = ~age, y = ~avg_Dalc, type = 'bar',
+      plot_ly(total_average_dalc, x = ~age, y = ~avg_Dalc, type = 'bar', hoverinfo = 'none',
               text = ~avg_Dalc, textposition = 'auto', 
               marker = list(color = 'rgba(219, 64, 82, 0.7)',
                             line = list(color = "orange", width = 1.5))) %>%
@@ -58,7 +58,7 @@ print(nrow(d3)) # 382 students
                title = "Average Dalc For Each Age")
       
     } else {
-      plot_ly(spread_sex_walc, x = ~age, y = ~female, type = 'bar', name = 'Female',
+      plot_ly(spread_sex_walc, x = ~age, y = ~female, type = 'bar', name = 'Female', hoverinfo = 'none',
               text = ~female, textposition = 'auto', marker = list(color = 'rgba(219, 64, 82, 0.7)',
                                                                    line = list(color = "orange", width = 1.5))) %>% 
         add_trace(y = ~male, name = 'Male', text = ~male, textposition = 'auto',
