@@ -121,6 +121,9 @@ body <- dashboardBody(
     ),
       tabItem(tabName = "Katie",
             h2("How do the different variables correlate to alcohol Consumption?"),
+            p("While the main focus of our project is to better understand the effect alcohol has on students, it is 
+              also important to reflect on what might be causing increased alcohol consumption in the first place. 
+              This graph is here to help better understand what other factors might be affecting students' lives"),
             selectInput('alc', 'Alchohol Consumption', list('Workday Alchohol Consumption' = 'Dalc', 
                                                             'Weekend Alcohol Consumption' = 'Walc')),
             selectInput('var', 'Variable', list('Family Relationship' = 'famrel', '# of Absences' = 'absences',
@@ -128,7 +131,18 @@ body <- dashboardBody(
                                                 'First Period Grades' = 'G1', 'Second Period Grades' = 'G2',
                                                 'Third Period Grades' = 'G3')),
 
-            plotlyOutput('interactiveAlcPlot')
+            plotlyOutput('interactiveAlcPlot'),
+            br(),
+            p("As seen above, there is some correlation between alcohol consumption and outside variables. 
+              There is a slight correlation between a a higher alcohol consumption and lower family relationship.
+              However, it is very slight. The scale on the graphs is set to highlight whatever correlation there may be,
+              but it is important to note that the actual difference may only be 0.1 or 0.2. These graphs are not drawing
+              any definitive claims, but they do help us assess our larger question at hand with a wider view and give
+              way to possible next steps for this project. It is not enough to only say that alcohol does affect
+              students. How do educators address this problem? What are other aspects of a student's life that could
+              be adding to the problem? Even if a strong correlation is not present, the graphs still can act as a
+              launching off point, not a conclusion but an introduction to a larger topic of where and how to help
+              students with an alcohol problem.")
       ),
       tabItem(tabName = "Tabitha",
              h2("How does does Gender and Age Effect Alcohol Consumption?"),
