@@ -22,17 +22,17 @@ sidebar <- dashboardSidebar(
     ),
     menuItem("Grades",
       tabName = "Grades_alcohol_Consumption",
-      icon = icon("globe-asia")
+      icon = icon("graduation-cap")
     ),
-    menuItem("Alcohol Consumption",
+    menuItem("Workday Vs. Weekday",
       tabName = "Katie",
-      icon = icon("chart-line")
+      icon = icon("calendar")
     ),
     menuItem("Sex and Age",
       tabName = "Tabitha",
       icon = icon("venus-mars")
     ),
-    menuItem("Original Codes",
+    menuItem("Github Code",
       icon = icon("file-code-o"),
       href = "https://github.com/lucysebinlee/INFO478-Project"
     )
@@ -47,6 +47,8 @@ body <- dashboardBody(
       p("By. Tabitha Anderson, Katie Clark, Lucy Lee, Brian Luu, Rita Wu"),
       br(),
       h4("Project Description"),
+      br(),
+      img(src = "teenage_drink.jpg", width = 600, height = 350, style="display: block; margin-left: auto; margin-right: auto;"),
       br(),
       h5("Purpose"),
       p("In order to teach effectively, it is important for educators to understand the factors that influence 
@@ -165,7 +167,10 @@ body <- dashboardBody(
                start to see this begin to change. More and more students begin to fall under the 3+ categories, and there is less people
                drinking at the lowest amount. Something to keep in mind is that these data ranges have different amounts and the highest
                ages have less people responding. We believe that these ages have enough response that this trend would continue with more
-               data."),
+               data. A reason that we may see this trend is due to accessibility reasons. The closer someone gets to the age of 21, the more
+               likely they will know someone that can provide them alcohol. When people have the ability to drink, it seems that they are
+               inclined to do so excessively. This is why the higher ages in education would be a target for anyone trying to combat these
+               at risk kids."),
              br(),
              h3('How Sex Effects the Daily Alcohol Consumption of Students'),
              br(),
@@ -180,7 +185,11 @@ body <- dashboardBody(
              br(),
              p('When we switch between females and males, there seems to be quite a shift between the different sexes. With males, we see a 
                higher amount of people in the 3, 4, and 5 categories, and less in the 1 and 2 than their female counterparts. This would
-               support the idea that men tend to consume more than females.'),
+               support the idea that men tend to consume more than females. One question that arises with these findings is if the survey
+               is completely effective. Men are able to drink more than women on average, but we are not sure if these categories account
+               for these biological differences. This would be something to research further with different variations to the data. Based off
+               of these findings, people would put an emphasis on male drinking in trying to lower the rates because they seem to be more
+               likely to drink more than their female counterparts.'),
              br(),
              h3('Average Daily Alcohol Consumption Levels'),
              br(),
@@ -198,7 +207,7 @@ body <- dashboardBody(
                except 19 years old. This would support the previous idea that men tend to drink more excessively than
                their female counterparts. When we begin to look at the averages without the different sexes, we start to
                see another trend. This one sees the drinking levels increase pretty drastically after turning 21. This
-               would show that once people have more access to alcohol, they are more likely to drink more excessively.')
+               would show that once people have more access to alcohol, they are more likely to drink more excessively. ')
           ),
             tabItem(
               tabName = "Rita",
