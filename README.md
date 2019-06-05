@@ -1,6 +1,6 @@
 # INFO 478 Project Proposal
 Names: Lucy Lee, Rita Wu, Brian Luu, Tabitha Anderson, Katie Clark <br/>
-Data: Student Alcohol Consumption Dataset on Kaggle https://www.kaggle.com/uciml/student-alcohol-consumption
+Data: Student Alcohol Consumption Dataset on Kaggle https://www.kaggle.com/uciml/student-alcohol-consumption <br/>
 Link to Project: https://andert97.shinyapps.io/INFO478-Project/
 
 ## Project Description
